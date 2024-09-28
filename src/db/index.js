@@ -1,5 +1,5 @@
 import mongoose, { mongo } from "mongoose";
-import {DB_NAME} from "../utils/constants.js"
+import {DB_NAME} from "../constants.js"
 
 const connectionStr = process.env.MONGODB_URI
 
