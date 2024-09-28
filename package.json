@@ -1,0 +1,22 @@
+{
+  "name": "backend-prac",
+  "version": "1.0.0",
+  "description": "learning backend and production",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "backed",
+    "mongo",
+    "mongoose",
+    "database",
+    "production"
+  ],
+  "author": "shree bavachikar",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.7",
+    "prettier": "^3.3.3"
+  }
+}
