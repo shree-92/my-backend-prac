@@ -11,28 +11,3 @@ dotenv.config({
 })
 
 dbConnect()
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ;( async ()=>{
-//     try {
-//         await mongoose.connect(`${connectionStr}/${DB_NAME}`);
-//         app.on("error", (error)=> console.log(error)
-//         )
-//         app.listen(port, ()=> console.log(`app is listenting on ${port}`)
-//         )
-//     } catch (error) {
-//         console.log(error);
-//         throw error;
-//     }
-// } )()
