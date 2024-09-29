@@ -1,14 +1,14 @@
 import dotenv from "dotenv";
-
 import dbConnect from "./db/index.js";
-import e from "express";
+import express from "express";
 
-const port = process.env.PORT
-const app = e()
+import {app} from './app.js'
 
 dotenv.config({
-    path: './env'
+    path: './.env'
 })
+
+const port = process.env.PORT
 
 dbConnect()
 .then(()=>{
