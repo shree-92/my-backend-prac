@@ -13,7 +13,7 @@ router.route('/register').post(
                 name: "avatar",
                 maxCount: 1 // read multer docs for more options
             },{
-                name: "covers",
+                name: "coverimage",
                 maxCount: 1
             }
         ]
