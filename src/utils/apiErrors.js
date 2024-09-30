@@ -20,5 +20,7 @@ class ApiError extends Error {
     }
 }
 
+export {ApiError}
+
 
 // yee idk wtf i did here but production lvl yayyyyyy

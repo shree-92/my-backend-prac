@@ -51,7 +51,7 @@ const userSchema = new Schema(
 
 userSchema.pre("save", async function(next){
     if(this.isModified("password")) return next(); // logic for password encryption if not done this way mongoose will encrypt pass each any other field is changed by doing this pass word will only be encrypted if its modified/change
-        this.password = bcrypt.hash(this.password, 10)
+        this.password = await bcrypt.hash(this.password, 10)
 } )
 
 // making an custom methods to verify password

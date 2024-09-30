@@ -24,3 +24,5 @@ const uploadOnCloudinary = async (localFilePath) => {
         fs.unlinkSync(localFilePath) // since the uploading to cloudinary has failed we will remove the file from our server also
     }
 }
+
+export {uploadOnCloudinary}
