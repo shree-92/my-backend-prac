@@ -19,7 +19,7 @@ const registerUser = asyncHandler( async (req,res) =>{
     const {fullname, email, username, password} = req.body;
     console.log(email, fullname, password);
 
-    // error handling
+    // error handling for missing files
     if(
         [fullname, email, username, password].some( (fields) => fields?.trim() === "" )
     ){
@@ -37,7 +37,14 @@ const registerUser = asyncHandler( async (req,res) =>{
 
     // check for images
     const avatarLocalPath = req.files?.avatar[0]?.path;
-    const coverimageLocalPath = req.files?.coverimage[0]?.path;
+    // const coverimageLocalPath = req.files?.coverimage[0]?.path;
+
+    // below block helps to make it optional and will only check for url if its uploaded 
+    let coverimageLocalPath;
+    if (req.files && Array.isArray(req.files.coverimage) && req.files.coverimage.length > 0) {
+        coverimageLocalPath = req.files.coverimage[0].path;
+    }
+
 
     // check for avatar 
     if (!avatarLocalPath) {
@@ -55,7 +62,7 @@ const registerUser = asyncHandler( async (req,res) =>{
     const user = await User.create({
         fullname,
         avatar: avatar.url,
-        coverimage: coverimage.url || "",
+        coverimage: coverimage?.url || "", // ? here is imp if want to make it optional and not cause errors
         email,
         password,
         username: username.toLowerCase(),
